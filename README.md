@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo.png" height="300">
+    <img src="https://github.com/dimesoftware/timelinebuilderjs/raw/master/assets/logo.png" height="300">
 </p>
 
 <p align="center">

@@ -35,6 +35,9 @@ var Timeline = /** @class */ (function () {
             }
         }
     };
+    Timeline.prototype.addRange = function (range) {
+        return this.add(range.start, range.end);
+    };
     Timeline.prototype.toList = function () {
         return this._timeRanges;
     };
