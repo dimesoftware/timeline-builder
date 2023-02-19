@@ -3,6 +3,14 @@
 </p>
 
 <p align="center">
+    <a href="https://www.npmjs.com/package/timeline-builder"> 
+        <img src="https://img.shields.io/npm/v/timeline-builder?style=flat-square" />
+    </a>
+    <img src="https://img.shields.io/npm/l/timeline-builder?style=flat-square" />
+    <img src="https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square" />
+</p>
+
+<p align="center">
     <h1>Timeline builder</h1>
 </p>
 
@@ -24,3 +32,19 @@ console.log(timeline);
 ```
 
 Check out this [code sample](https://stackblitz.com/edit/js-yilpbp?file=index.js) to see it in action.
+
+## Install
+
+Add the `timeline-builder` package on npm:
+
+```
+npm install timeline-builder
+```
+or with yarn
+```
+yarn add timeline-builder
+```
+
+## License 
+
+MIT
