@@ -10,9 +10,7 @@
     <img src="https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square" />
 </p>
 
-<p align="center">
-    <h1>Timeline builder</h1>
-</p>
+<h1 align="center">Timeline builder</h1>
 
 A timeline builder that stores an array of the date ranges that have been buffered by your application, as to reduce the amount of data your backend should load.
 
@@ -40,11 +38,13 @@ Add the `timeline-builder` package on npm:
 ```
 npm install timeline-builder
 ```
+
 or with yarn
+
 ```
 yarn add timeline-builder
 ```
 
-## License 
+## License
 
 MIT
