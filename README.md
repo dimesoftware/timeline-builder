@@ -1,10 +1,10 @@
-<center>
-<img src="assets/logo.png" height="300">
-</center>
+<p align="center">
+    <img src="assets/logo.png" height="300">
+</p>
 
-<center>
-<h1>Timeline builder</h1>
-</center>
+<p align="center">
+    <h1>Timeline builder</h1>
+</p>
 
 A timeline builder that stores an array of the date ranges that have been buffered by your application, as to reduce the amount of data your backend should load.
 
