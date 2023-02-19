@@ -16,6 +16,14 @@
   },
   "author": "Dime Software",
   "license": "MIT",
+  "keywords": [
+    "timeline",
+    "daterange",
+    "buffering",
+    "buffer",
+    "merge",
+    "datecompare"
+  ],
   "bugs": {
     "url": "https://github.com/dimesoftware/timelinebuilderjs/issues"
   },
