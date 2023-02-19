@@ -23,7 +23,7 @@ console.log(timeline);
 
 // [
 //  DateRange {
-//    start: 2022-12-01
+//    start: 2023-01-01
 //    end: 2023-01-06
 //  }
 // ]

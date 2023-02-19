@@ -6,7 +6,7 @@ export default class Timeline {
   constructor() {
     this._timeRanges = new Array<DateRange>();
   }
-
+  
   public add(start: Date, end: Date): any {
     // Iterate through the existing time ranges to see if the new range overlaps with any of them
     let overlapFound = false;
@@ -46,6 +46,10 @@ export default class Timeline {
     }
   }
 
+  public addRange(range: DateRange) {
+    return this.add(range.start, range.end);
+  }
+  
   public toList(): DateRange[] {
     return this._timeRanges;
   }
