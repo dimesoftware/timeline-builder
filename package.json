@@ -1,14 +1,17 @@
 {
   "name": "timeline-builder",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Compare and merge date ranges and create a timeline",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepub": "copy package.json dist && copy README.md dist",
+    "pub": "cd dist & yarn publish",
+    "postpub": "cd dist & del package.json & del README.md"
   },
   "repository": {
     "type": "git",

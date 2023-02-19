@@ -22,3 +22,5 @@ console.log(timeline);
 //  }
 // ]
 ```
+
+Check out this [code sample](https://stackblitz.com/edit/js-yilpbp?file=index.js) to see it in action.
