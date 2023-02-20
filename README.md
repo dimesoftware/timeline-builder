@@ -8,6 +8,7 @@
     </a>
     <img src="https://img.shields.io/npm/l/timeline-builder?style=flat-square" />
     <img src="https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square" />
+    <img src="https://github.com/dimesoftware/timeline-builder/actions/workflows/ci.yml/badge.svg?branch=master" />
 </p>
 
 <h1 align="center">Timeline builder</h1>
