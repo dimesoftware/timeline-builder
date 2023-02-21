@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "outDir": "./dist",
-        "strict": true,
+        "strict": true,        
         "declaration": true
     },
     "include": [
