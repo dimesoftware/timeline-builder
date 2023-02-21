@@ -16,7 +16,7 @@ export default class Timeline {
     let overlapFound = false;
     for (const timeRange of this._timeRanges) {
       if (timeRange.overlapsWith(range)) {
-        timeRange.reconcile(range);
+        timeRange.expand(range);
         overlapFound = true;
         break;
       }
@@ -33,11 +33,15 @@ export default class Timeline {
     // Merge overlapping time ranges
     for (let i = 0; i < this._timeRanges.length - 1; i++) {
       if (this._timeRanges[i].end >= this._timeRanges[i + 1].start) {
-        this._timeRanges[i].reconcileEnd(this._timeRanges[i + 1]);
+        this._timeRanges[i].expandRight(this._timeRanges[i + 1]);
         this._timeRanges.splice(i + 1, 1);
         i--;
       }
     }
+  }
+
+  public contains(start: Date, end: Date): boolean {
+    return this._timeRanges.some(x => x.overlaps(start, end));
   }
 
   public toList(): DateRange[] {

@@ -19,12 +19,16 @@ export default class DateRange {
       || (other.start <= this.start && other.end >= this.end);
   }
 
-  reconcile(other: DateRange) {
-    this.start = new Date(Math.min(this.startTime, other.startTime));
-    this.reconcileEnd(other);
+  expand(other: DateRange) {
+    this.expandLeft(other);
+    this.expandRight(other);
   }
 
-  reconcileEnd(other: DateRange) {
+  expandLeft(other: DateRange) {
+    this.start = new Date(Math.min(this.startTime, other.startTime));
+  }
+
+  expandRight(other: DateRange) {
     this.end = new Date(Math.max(this.endTime, other.endTime));
   }
 }

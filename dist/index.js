@@ -14,7 +14,7 @@ var Timeline = /** @class */ (function () {
         for (var _i = 0, _a = this._timeRanges; _i < _a.length; _i++) {
             var timeRange = _a[_i];
             if (timeRange.overlapsWith(range)) {
-                timeRange.reconcile(range);
+                timeRange.expand(range);
                 overlapFound = true;
                 break;
             }
@@ -28,11 +28,14 @@ var Timeline = /** @class */ (function () {
         // Merge overlapping time ranges
         for (var i = 0; i < this._timeRanges.length - 1; i++) {
             if (this._timeRanges[i].end >= this._timeRanges[i + 1].start) {
-                this._timeRanges[i].reconcileEnd(this._timeRanges[i + 1]);
+                this._timeRanges[i].expandRight(this._timeRanges[i + 1]);
                 this._timeRanges.splice(i + 1, 1);
                 i--;
             }
         }
+    };
+    Timeline.prototype.contains = function (start, end) {
+        return this._timeRanges.some(function (x) { return x.overlaps(start, end); });
     };
     Timeline.prototype.toList = function () {
         return this._timeRanges;

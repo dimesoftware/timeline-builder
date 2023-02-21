@@ -27,11 +27,14 @@ var DateRange = /** @class */ (function () {
             || (other.end >= this.start && other.end <= this.end)
             || (other.start <= this.start && other.end >= this.end);
     };
-    DateRange.prototype.reconcile = function (other) {
-        this.start = new Date(Math.min(this.startTime, other.startTime));
-        this.reconcileEnd(other);
+    DateRange.prototype.expand = function (other) {
+        this.expandLeft(other);
+        this.expandRight(other);
     };
-    DateRange.prototype.reconcileEnd = function (other) {
+    DateRange.prototype.expandLeft = function (other) {
+        this.start = new Date(Math.min(this.startTime, other.startTime));
+    };
+    DateRange.prototype.expandRight = function (other) {
         this.end = new Date(Math.max(this.endTime, other.endTime));
     };
     return DateRange;
