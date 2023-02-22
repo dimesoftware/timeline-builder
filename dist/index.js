@@ -38,7 +38,7 @@ var Timeline = /** @class */ (function () {
         return this._timeRanges.some(function (x) { return x.overlaps(start, end); });
     };
     Timeline.prototype.containsAll = function (start, end) {
-        return this._timeRanges.some(function (x) { return x.start >= start && x.end <= end; });
+        return this._timeRanges.some(function (x) { return x.start <= start && x.end >= end; });
     };
     Timeline.prototype.toList = function () {
         return this._timeRanges;

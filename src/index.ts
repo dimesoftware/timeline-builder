@@ -45,7 +45,7 @@ export default class Timeline {
   }
 
   public containsAll(start: Date, end: Date): boolean { 
-    return this._timeRanges.some(x => x.start >= start && x.end <= end);
+    return this._timeRanges.some(x => x.start <= start && x.end >= end);
   }
 
   public toList(): DateRange[] {

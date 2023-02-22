@@ -36,38 +36,52 @@ test('Fully overlapping range should be contained in timeline', () => {
     expect(contains).toBe(true);
 });
 
-test('Reject that new dates will be added ', () => {
+test('Reject that new dates will be added', () => {
     const timeline = new Timeline();
     timeline.add(new Date(2023, 0, 1), new Date(2023, 0, 5));
     timeline.add(new Date(2023, 0, 10), new Date(2023, 0, 15));
 
-    const willExpand = timeline.containsAll(new Date(2023, 0, 1), new Date(2023, 0, 4))
-    expect(willExpand).toBe(false);
+    const isInsideBuffer = timeline.containsAll(new Date(2023, 0, 2), new Date(2023, 0, 4))
+    expect(isInsideBuffer).toBe(true);
 });
 
-test('Claim that a partially overlapping range will be added ', () => {
+test('Claim that a partially overlapping range (starts earlier) will be added', () => {
     const timeline = new Timeline();
     timeline.add(new Date(2023, 0, 1), new Date(2023, 0, 5));
     timeline.add(new Date(2023, 0, 10), new Date(2023, 0, 15));
 
-    const startDate = new Date(2023, 0, 1);
+    const startDate = new Date(2022, 11, 31);
     const endDate = new Date(2023, 0, 7);
-    const willExpand = timeline.containsAll(startDate, endDate)
-    expect(willExpand).toBe(true);
+    const isInsideBuffer = timeline.containsAll(startDate, endDate)
+    expect(isInsideBuffer).toBe(false);
 
     timeline.add(startDate, endDate);
     expect(timeline.toList()[0].end).toStrictEqual(endDate);
 });
 
-test('Claim that a fully overlapping range will be added ', () => {
+test('Claim that a partially overlapping range (ends later) will be added', () => {
+    const timeline = new Timeline();
+    timeline.add(new Date(2023, 0, 1), new Date(2023, 0, 5));
+    timeline.add(new Date(2023, 0, 10), new Date(2023, 0, 15));
+
+    const startDate = new Date(2023, 0, 2);
+    const endDate = new Date(2023, 0, 6);
+    const isInsideBuffer = timeline.containsAll(startDate, endDate)
+    expect(isInsideBuffer).toBe(false);
+
+    timeline.add(startDate, endDate);
+    expect(timeline.toList()[0].end).toStrictEqual(endDate);
+});
+
+test('Claim that a fully overlapping range will be added', () => {
     const timeline = new Timeline();
     timeline.add(new Date(2023, 0, 1), new Date(2023, 0, 5));
     timeline.add(new Date(2023, 0, 10), new Date(2023, 0, 15));
 
     const startDate = new Date(2022, 11, 31);
     const endDate = new Date(2023, 0, 15);
-    const willExpand = timeline.containsAll(startDate, endDate);
-    expect(willExpand).toBe(true);
+    const isInsideBuffer = timeline.containsAll(startDate, endDate);
+    expect(isInsideBuffer).toBe(false);
 
     timeline.add(startDate, endDate);
 
