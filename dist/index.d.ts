@@ -6,5 +6,6 @@ export default class Timeline {
     addRange(range: DateRange): void;
     contains(start: Date, end: Date): boolean;
     toList(): DateRange[];
+    clear(): void;
     get count(): number;
 }

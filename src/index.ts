@@ -48,6 +48,10 @@ export default class Timeline {
     return this._timeRanges;
   }
 
+  public clear(): void {
+    this._timeRanges.splice(0, this._timeRanges.length);
+  }
+
   public get count(): number {
     return this._timeRanges.length;
   }

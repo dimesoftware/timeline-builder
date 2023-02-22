@@ -40,6 +40,9 @@ var Timeline = /** @class */ (function () {
     Timeline.prototype.toList = function () {
         return this._timeRanges;
     };
+    Timeline.prototype.clear = function () {
+        this._timeRanges.splice(0, this._timeRanges.length);
+    };
     Object.defineProperty(Timeline.prototype, "count", {
         get: function () {
             return this._timeRanges.length;

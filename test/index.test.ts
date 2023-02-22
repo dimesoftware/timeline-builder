@@ -109,3 +109,17 @@ test('[T8] Add range that exists entirely inside timeline', () => {
     assertCount(timeline, 1);
     assertRange(timeline.toList()[0], createDate(Month.January), createDate(Month.May));
 });
+
+test('Clear timeline should return 0 records', () => {
+    const timeline = new Timeline();
+    timeline.add(createDate(Month.March), createDate(Month.April));
+    timeline.add(createDate(Month.January), createDate(Month.May));
+
+    const countBeforeDelete = timeline.count;
+    timeline.clear();
+    const countAfterDelete = timeline.count;
+
+    expect(countBeforeDelete).toBe(1);
+    expect(countAfterDelete).toBe(0);
+    
+});
