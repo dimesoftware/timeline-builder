@@ -1,9 +1,9 @@
 {
   "name": "timeline-builder",
-  "version": "0.0.11",
+  "version": "1.0.0-rc1",
   "description": "Compare and merge date ranges and create a timeline",
   "main": "index.js",
-  "types": "index.d.ts",
+  "types": "index.d.ts",  
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc && webpack",
