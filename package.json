@@ -1,6 +1,6 @@
 {
   "name": "timeline-builder",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0",
   "description": "Compare and merge date ranges and create a timeline",
   "main": "index.js",
   "types": "index.d.ts",  
